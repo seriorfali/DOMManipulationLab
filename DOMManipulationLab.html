@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+      }
+      h1 {
+        margin-top: 60px;
+        margin-bottom: 22px;
+      }
+      .conversion {
+        display: inline-block;
+        font-size: 80px;
+        margin-top: 22px;
+        margin-bottom: 40px;
+      }
+      .input {
+        display: inline-block;
+        font-size: 40px;
+      }
+      input {
+        text-align: center;
+        width: 110px;
+      }
+      </p>
+      ::-webkit-input-placeholder {
+          font-family: .9375rem/2 "Circular", Helvetica, Arial, sans-serif;
+          font-size: 10px;
+          font-weight: 90;
+          vertical-align: middle;
+          text-align: center;
+      }
+      ::-moz-placeholder {
+          font-family: .9375rem/2 "Circular", Helvetica, Arial, sans-serif;
+          font-size: 10px;
+          font-weight: 90;
+          vertical-align: middle;
+          text-align: center;
+      }
+      :-ms-input-placeholder {
+          font-family: .9375rem/2 "Circular", Helvetica, Arial, sans-serif;
+          font-size: 10px;
+          font-weight: 90;
+          vertical-align: middle;
+          text-align: center;
+      }
+      input:-moz-placeholder {
+          font-family: .9375rem/2 "Circular", Helvetica, Arial, sans-serif;
+          font-size: 10px;
+          font-weight: 90;
+          vertical-align: middle;
+          text-align: center;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
+    <title>Tempverter</title>
+  </head>
+  <body>
+    <h1>Tempverter</h1>
+    <p class="conversion" id="conversion">32</p>
+    <p class="conversion" id="fLabel">˚F</p>
+    <br>
+    <input class="input" id="box" type="number" placeholder="0" onfocus="this.placeholder=''" onblur="this.placeholder=0">
+    <label class="input" id="cLabel" for="text">˚C</label>
+    <script type="text/javascript">
+      var conversion = document.querySelector('#conversion');
+      var inputBox = document.getElementById('box');
+      var celcius = document.getElementById('box').value;
+      function convertToF(C) {
+        return C * 9 / 5 + 32;
+      };
+      inputBox.addEventListener("input", function() {
+        conversion.innerHTML = convertToF(document.getElementById('box').value);
+      });
+    </script>
+  </body>
+</html>
